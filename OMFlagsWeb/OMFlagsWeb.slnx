@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="OMFlags.Application/OMFlags.Application.csproj" />
+  <Project Path="OMFlags.Domain/OMFlags.Domain.csproj" />
+  <Project Path="OMFlags.Infrastructure/OMFlags.Infrastructure.csproj" />
+  <Project Path="OMFlags.Test.Integration/OMFlags.Test.Integration.csproj" />
+  <Project Path="OMFlags.Test.Unit/OMFlags.Test.Unit.csproj" />
+  <Project Path="OMFlags.UI/OMFlags.UI.csproj" />
+</Solution>

@@ -1,0 +1,179 @@
+﻿@page "/"
+@using OMFlags.UI.Models
+@inject OMFlags.UI.Services.BackendClient Backend
+
+<link href="OMFlags.UI.styles.css" rel="stylesheet" />
+
+
+<h3>Country Flags</h3>
+
+@if (_loading)
+{
+    <p>Loading flags…</p>
+}
+else if (!string.IsNullOrEmpty(_error))
+{
+    <p style="color:b91c1c;">@_error</p>
+}
+else if (_countries?.Count > 0)
+{
+    <div class="grid">
+        @foreach (var c in _countries)
+        {
+            <button class="card" type="button" title="@c.Name" @onclick="() => OnFlagClick(c.Name)">
+                <img src="@c.FlagUrl"
+                     alt="@c.Name flag"
+                     style="width:100%;height:100px;object-fit:cover;border-radius:8px;"
+                     onerror="this.style.display='none';" />
+                <div class="caption">@c.Name</div>
+            </button>
+        }
+    </div>
+}
+else
+{
+    <p>No countries available.</p>
+}
+
+<Modal Show="@_showModal" Title="@_modalTitle" OnClose="CloseModal">
+    @if (_detailLoading)
+    {
+        <p>Loading…</p>
+    }
+    else if (!string.IsNullOrEmpty(_detailError))
+    {
+        <p style="color:b91c1c;">@_detailError</p>  @* added # *@
+    }
+    else if (_detail is not null)
+    {
+        <div class="detail">
+            @if (!string.IsNullOrWhiteSpace(_detail.FlagPng))
+            {
+                <img src="@_detail.FlagPng" alt="@_detail.Name flag"
+                     style="width:140px;height:94px;object-fit:cover;border-radius:8px;margin-bottom:.75rem;"
+                     onerror="this.style.display='none';" />
+            }
+
+            <ul class="kv">
+                <li><span>Country</span><strong>@_detail.Name</strong></li>
+                @if (!string.IsNullOrWhiteSpace(_detail.Capital))
+                {
+                    <li><span>Capital</span><strong>@_detail.Capital</strong></li>
+                }
+                <li><span>Population</span><strong>@_detail.Population.ToString("N0")</strong></li>
+                <li><span>Area</span><strong>@_detail.Area.ToString("N0") km²</strong></li>
+            </ul>
+
+            @if (_detail.Timezones?.Count > 0)
+            {
+                <div class="section">
+                    <div class="section-title">Timezones</div>
+                    <div class="chips">
+                        @foreach (var tz in _detail.Timezones)
+                        {
+                            <span class="chip">@tz</span>
+                        }
+                    </div>
+                </div>
+            }
+
+            @if (_detail.Languages?.Count > 0)
+            {
+                <div class="section">
+                    <div class="section-title">Languages</div>
+                    <div class="chips">
+                        @foreach (var lang in _detail.Languages)
+                        {
+                            <span class="chip">@lang</span>
+                        }
+                    </div>
+                </div>
+            }
+
+            @if (_detail.Currencies?.Count > 0)
+            {
+                <div class="section">
+                    <div class="section-title">Currencies</div>
+                    <table class="cur">
+                        <thead><tr><th>Code</th><th>Name</th><th>Symbol</th></tr></thead>
+                        <tbody>
+                            @foreach (var c in _detail.Currencies)
+                            {
+                                <tr><td>@c.Code</td><td>@c.Name</td><td>@c.Symbol</td></tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+
+            @if (!string.IsNullOrWhiteSpace(_detail.GoogleMaps) || !string.IsNullOrWhiteSpace(_detail.OpenStreetMaps))
+            {
+                <div class="section">
+                    <div class="section-title">Maps</div>
+                    <div class="links">
+                        @if (!string.IsNullOrWhiteSpace(_detail.GoogleMaps))
+                        {
+                            <a href="@_detail.GoogleMaps" target="_blank" rel="noopener noreferrer">Google Maps</a>
+                        }
+                        @if (!string.IsNullOrWhiteSpace(_detail.OpenStreetMaps))
+                        {
+                            <a href="@_detail.OpenStreetMaps" target="_blank" rel="noopener noreferrer">OpenStreetMap</a>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</Modal>
+
+
+@code {
+    private List<CountryModel>? _countries;
+    private CountryDetailModel? _detail;
+    private bool _loading = true;
+    private string? _error;
+
+    private bool _showModal;
+    private string _modalTitle = string.Empty;
+    private bool _detailLoading;
+    private string? _detailError;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            _countries = await Backend.GetCountriesAsync();
+            if (_countries is null || _countries.Count == 0)
+                _error = "API returned no countries.";
+        }
+        catch (Exception ex) { _error = $"Failed to load countries: {ex.Message}"; }
+        finally { _loading = false; }
+    }
+
+    private async Task OnFlagClick(string name)
+    {
+        _modalTitle = name;
+        _showModal = true;
+        _detail = null;
+        _detailError = null;
+        _detailLoading = true;
+        StateHasChanged();
+
+        try
+        {
+            _detail = await Backend.GetCountryDetailsAsync(name);
+            if (_detail is null) _detailError = "No details found.";
+        }
+        catch (Exception ex) { _detailError = $"Failed to load details: {ex.Message}"; }
+        finally { _detailLoading = false; StateHasChanged(); }
+    }
+
+    private Task CloseModal()
+    {
+        _showModal = false;
+        _detail = null;
+        _detailError = null;
+        return Task.CompletedTask;
+    }
+
+}

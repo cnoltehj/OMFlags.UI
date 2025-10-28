@@ -1,0 +1,31 @@
+﻿@page "/country/{Name}"
+@inject OMFlags.UI.Services.BackendClient Backend
+
+
+<h3>@Name</h3>
+
+
+@if (_detail is null)
+{
+    <p>Loading details...</p>
+}
+else
+{
+    <ul>
+        <li><strong>Country name:</strong> @_detail.Name</li>
+        <li><strong>Population:</strong> @_detail.Population.ToString("N0")</li>
+        <li><strong>Capital:</strong> @_detail.Capital</li>
+    </ul>
+}
+
+
+@code {
+    [Parameter] public string Name { get; set; } = string.Empty;
+    private OMFlags.UI.Models.CountryDetailModel? _detail;
+
+
+    protected override async Task OnParametersSetAsync()
+    {
+        _detail = await Backend.GetCountryDetailsAsync(Name);
+    }
+}

@@ -1,0 +1,89 @@
+﻿version: '3.8'
+
+services:
+  flashchat:
+    build:
+      context: .
+      dockerfile: FlashChat/Dockerfile
+    ports:
+      - "8080:80"   
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: "http://+:80"
+      ConnectionStrings__DefaultConnection: "Server=mssql,1433;Database=FlashChatDb;User Id=sa;Password=!Passw0rd;TrustServerCertificate=True;"
+    depends_on:
+      - rabbitmq
+      - mssql
+    networks:
+      - flashchat-network
+    restart: always  # Ensure that the service restarts automatically if it fails
+
+  flashsensitiveapi:
+    build:
+      context: .
+      dockerfile: FlashSensitiveApi/Dockerfile
+    ports:
+      - "5064:80"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: "http://+:80"
+    networks:
+    - flashchat-network
+    restart: always  # Ensure that the service restarts automatically if it fails
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+      RABBITMQ_LOAD_DEFINITIONS: /etc/rabbitmq/definitions.json
+
+    volumes:
+      - ./definitions.json:/etc/rabbitmq/definitions.json
+      - ./rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
+      - rabbitmq_data:/var/lib/rabbitmq
+    networks:
+      - flashchat-network
+    restart: always  # Ensure that RabbitMQ restarts automatically if it fails
+    command: "rabbitmq-server"  # Ensure RabbitMQ starts properly in some cases
+
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    ports:
+      - "1433:1433"
+    environment:
+      SA_PASSWORD: "!Passw0rd"
+      ACCEPT_EULA: "Y"
+    networks:
+      - flashchat-network
+    restart: always  # Ensure that the service restarts automatically if it fails
+
+  sqltools:
+    image: mcr.microsoft.com/mssql-tools
+    depends_on:
+      - mssql
+    volumes:
+      - ./init.sql:/tmp/init.sql
+    entrypoint: >
+      /bin/bash -c "
+      if [ ! -f /tmp/.db_initialized ]; then
+        echo 'Waiting for SQL Server...';
+        sleep 15 &&
+        /opt/mssql-tools/bin/sqlcmd -S mssql -U sa -P !Passw0rd -i /tmp/init.sql &&
+        touch /tmp/.db_initialized
+      else
+        echo 'Database already initialized.';
+      fi"
+    networks:
+      - flashchat-network
+    restart: "no"  # Only run once
+
+networks:
+  flashchat-network:
+    driver: bridge
+
+volumes:
+  rabbitmq_data:

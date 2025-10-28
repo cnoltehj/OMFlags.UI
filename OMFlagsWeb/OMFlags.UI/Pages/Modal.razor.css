@@ -1,0 +1,48 @@
+﻿/* Backdrop covers the whole viewport */
+.ms-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.45);
+    z-index: 10000; /* higher than any site styles */
+}
+
+/* Modal card centered */
+.ms-modal-card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(620px, 92vw);
+    max-height: 80vh;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0,0,0,.25);
+    z-index: 10001;
+    outline: none;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header/body */
+.ms-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .9rem 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.ms-modal-body {
+    padding: 1rem;
+    overflow: auto;
+}
+
+/* Close button */
+.ms-close {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: .25rem .5rem;
+}

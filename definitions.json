@@ -1,0 +1,68 @@
+{
+  "users": [
+    {
+      "name": "guest",
+      "password": "guest",
+      "tags": [ "administrator" ]
+    }
+  ],
+  "vhosts": [
+    {
+      "name": "/"
+    }
+  ],
+  "permissions": [
+    {
+      "user": "guest",
+      "vhost": "/",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    }
+  ],
+  "queues": [
+    {
+      "name": "message.to.filter",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "message.filtered",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    }
+  ],
+  "exchanges": [
+    {
+      "name": "filter-exchange",
+      "vhost": "/",
+      "type": "direct",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    }
+  ],
+  "bindings": [
+    {
+      "source": "filter-exchange",
+      "vhost": "/",
+      "destination": "message.to.filter",
+      "destination_type": "queue",
+      "routing_key": "to-filter",
+      "arguments": {}
+    },
+    {
+      "source": "filter-exchange",
+      "vhost": "/",
+      "destination": "message.filtered",
+      "destination_type": "queue",
+      "routing_key": "filter-key",
+      "arguments": {}
+    }
+  ]
+}

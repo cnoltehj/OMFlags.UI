@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\cnolt\\OneDrive\\Desktop\\InterviewTask\\OMFlags\\OMFlags.UI\\OMFlagsWeb\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{67209B80-F843-B008-D494-8A796E5DF7A1}|OMFlags.Test.Unit\\OMFlags.Test.Unit.csproj|c:\\users\\cnolt\\onedrive\\desktop\\interviewtask\\omflags\\omflags.ui\\omflagsweb\\omflags.test.unit\\modalunittests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67209B80-F843-B008-D494-8A796E5DF7A1}|OMFlags.Test.Unit\\OMFlags.Test.Unit.csproj|solutionrelative:omflags.test.unit\\modalunittests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67209B80-F843-B008-D494-8A796E5DF7A1}|OMFlags.Test.Unit\\OMFlags.Test.Unit.csproj|c:\\users\\cnolt\\onedrive\\desktop\\interviewtask\\omflags\\omflags.ui\\omflagsweb\\omflags.test.unit\\backendclientunittests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67209B80-F843-B008-D494-8A796E5DF7A1}|OMFlags.Test.Unit\\OMFlags.Test.Unit.csproj|solutionrelative:omflags.test.unit\\backendclientunittests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ModalUnitTests.cs",
+              "DocumentMoniker": "C:\\Users\\cnolt\\OneDrive\\Desktop\\InterviewTask\\OMFlags\\OMFlags.UI\\OMFlagsWeb\\OMFlags.Test.Unit\\ModalUnitTests.cs",
+              "RelativeDocumentMoniker": "OMFlags.Test.Unit\\ModalUnitTests.cs",
+              "ToolTip": "C:\\Users\\cnolt\\OneDrive\\Desktop\\InterviewTask\\OMFlags\\OMFlags.UI\\OMFlagsWeb\\OMFlags.Test.Unit\\ModalUnitTests.cs",
+              "RelativeToolTip": "OMFlags.Test.Unit\\ModalUnitTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-28T19:15:24.306Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BackendClientUnitTests.cs",
+              "DocumentMoniker": "C:\\Users\\cnolt\\OneDrive\\Desktop\\InterviewTask\\OMFlags\\OMFlags.UI\\OMFlagsWeb\\OMFlags.Test.Unit\\BackendClientUnitTests.cs",
+              "RelativeDocumentMoniker": "OMFlags.Test.Unit\\BackendClientUnitTests.cs",
+              "ToolTip": "C:\\Users\\cnolt\\OneDrive\\Desktop\\InterviewTask\\OMFlags\\OMFlags.UI\\OMFlagsWeb\\OMFlags.Test.Unit\\BackendClientUnitTests.cs",
+              "RelativeToolTip": "OMFlags.Test.Unit\\BackendClientUnitTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-28T19:15:08.054Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

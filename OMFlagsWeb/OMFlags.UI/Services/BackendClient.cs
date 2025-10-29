@@ -3,8 +3,6 @@ using System.Net.Http.Json;
 using System.Net.Http.Json;
 using System.Text.Json;
 
-
-
 namespace OMFlags.UI.Services
 {
     public sealed class BackendClient

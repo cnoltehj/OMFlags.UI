@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\cnolt\\OneDrive\\Desktop\\InterviewTask\\OMFlags\\OMFlags.UI\\OMFlagsWeb\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{67209B80-F843-B008-D494-8A796E5DF7A1}|OMFlags.Test.Unit\\OMFlags.Test.Unit.csproj|c:\\users\\cnolt\\onedrive\\desktop\\interviewtask\\omflags\\omflags.ui\\omflagsweb\\omflags.test.unit\\modalunittests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67209B80-F843-B008-D494-8A796E5DF7A1}|OMFlags.Test.Unit\\OMFlags.Test.Unit.csproj|solutionrelative:omflags.test.unit\\modalunittests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BB511C39-3C90-19BA-F6CD-9B96013C0205}|OMFlags.UI\\OMFlags.UI.csproj|c:\\users\\cnolt\\onedrive\\desktop\\interviewtask\\omflags\\omflags.ui\\omflagsweb\\omflags.ui\\pages\\modal.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BB511C39-3C90-19BA-F6CD-9B96013C0205}|OMFlags.UI\\OMFlags.UI.csproj|solutionrelative:omflags.ui\\pages\\modal.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{67209B80-F843-B008-D494-8A796E5DF7A1}|OMFlags.Test.Unit\\OMFlags.Test.Unit.csproj|c:\\users\\cnolt\\onedrive\\desktop\\interviewtask\\omflags\\omflags.ui\\omflagsweb\\omflags.test.unit\\backendclientunittests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67209B80-F843-B008-D494-8A796E5DF7A1}|OMFlags.Test.Unit\\OMFlags.Test.Unit.csproj|solutionrelative:omflags.test.unit\\backendclientunittests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BB511C39-3C90-19BA-F6CD-9B96013C0205}|OMFlags.UI\\OMFlags.UI.csproj|c:\\users\\cnolt\\onedrive\\desktop\\interviewtask\\omflags\\omflags.ui\\omflagsweb\\omflags.ui\\wwwroot\\css\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{BB511C39-3C90-19BA-F6CD-9B96013C0205}|OMFlags.UI\\OMFlags.UI.csproj|solutionrelative:omflags.ui\\wwwroot\\css\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB511C39-3C90-19BA-F6CD-9B96013C0205}|OMFlags.UI\\OMFlags.UI.csproj|c:\\users\\cnolt\\onedrive\\desktop\\interviewtask\\omflags\\omflags.ui\\omflagsweb\\omflags.ui\\pages\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BB511C39-3C90-19BA-F6CD-9B96013C0205}|OMFlags.UI\\OMFlags.UI.csproj|solutionrelative:omflags.ui\\pages\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,27 +27,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ModalUnitTests.cs",
-              "DocumentMoniker": "C:\\Users\\cnolt\\OneDrive\\Desktop\\InterviewTask\\OMFlags\\OMFlags.UI\\OMFlagsWeb\\OMFlags.Test.Unit\\ModalUnitTests.cs",
-              "RelativeDocumentMoniker": "OMFlags.Test.Unit\\ModalUnitTests.cs",
-              "ToolTip": "C:\\Users\\cnolt\\OneDrive\\Desktop\\InterviewTask\\OMFlags\\OMFlags.UI\\OMFlagsWeb\\OMFlags.Test.Unit\\ModalUnitTests.cs",
-              "RelativeToolTip": "OMFlags.Test.Unit\\ModalUnitTests.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T19:15:24.306Z",
+              "Title": "Modal.razor",
+              "DocumentMoniker": "C:\\Users\\cnolt\\OneDrive\\Desktop\\InterviewTask\\OMFlags\\OMFlags.UI\\OMFlagsWeb\\OMFlags.UI\\Pages\\Modal.razor",
+              "RelativeDocumentMoniker": "OMFlags.UI\\Pages\\Modal.razor",
+              "ToolTip": "C:\\Users\\cnolt\\OneDrive\\Desktop\\InterviewTask\\OMFlags\\OMFlags.UI\\OMFlagsWeb\\OMFlags.UI\\Pages\\Modal.razor",
+              "RelativeToolTip": "OMFlags.UI\\Pages\\Modal.razor",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAUwDEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-29T05:28:13.945Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "BackendClientUnitTests.cs",
-              "DocumentMoniker": "C:\\Users\\cnolt\\OneDrive\\Desktop\\InterviewTask\\OMFlags\\OMFlags.UI\\OMFlagsWeb\\OMFlags.Test.Unit\\BackendClientUnitTests.cs",
-              "RelativeDocumentMoniker": "OMFlags.Test.Unit\\BackendClientUnitTests.cs",
-              "ToolTip": "C:\\Users\\cnolt\\OneDrive\\Desktop\\InterviewTask\\OMFlags\\OMFlags.UI\\OMFlagsWeb\\OMFlags.Test.Unit\\BackendClientUnitTests.cs",
-              "RelativeToolTip": "OMFlags.Test.Unit\\BackendClientUnitTests.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T19:15:08.054Z",
+              "Title": "app.css",
+              "DocumentMoniker": "C:\\Users\\cnolt\\OneDrive\\Desktop\\InterviewTask\\OMFlags\\OMFlags.UI\\OMFlagsWeb\\OMFlags.UI\\wwwroot\\css\\app.css",
+              "RelativeDocumentMoniker": "OMFlags.UI\\wwwroot\\css\\app.css",
+              "ToolTip": "C:\\Users\\cnolt\\OneDrive\\Desktop\\InterviewTask\\OMFlags\\OMFlags.UI\\OMFlagsWeb\\OMFlags.UI\\wwwroot\\css\\app.css",
+              "RelativeToolTip": "OMFlags.UI\\wwwroot\\css\\app.css",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAuwHYAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-29T05:21:41.094Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.razor",
+              "DocumentMoniker": "C:\\Users\\cnolt\\OneDrive\\Desktop\\InterviewTask\\OMFlags\\OMFlags.UI\\OMFlagsWeb\\OMFlags.UI\\Pages\\Index.razor",
+              "RelativeDocumentMoniker": "OMFlags.UI\\Pages\\Index.razor",
+              "ToolTip": "C:\\Users\\cnolt\\OneDrive\\Desktop\\InterviewTask\\OMFlags\\OMFlags.UI\\OMFlagsWeb\\OMFlags.UI\\Pages\\Index.razor",
+              "RelativeToolTip": "OMFlags.UI\\Pages\\Index.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-29T05:21:01.169Z",
               "EditorCaption": ""
             }
           ]

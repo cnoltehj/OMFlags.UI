@@ -1,73 +1,69 @@
 ﻿@using Microsoft.AspNetCore.Components.Web
 
 <style>
-    /* Fallback styles, loaded inline so the modal always overlays even if isolation CSS isn't loaded */
-    .__ms_backdrop {
-        position: fixed;
-        inset: 0;
-        background: gba(0,0,0,.45);
-        z-index: 10000;
-    }
+  .__ms_backdrop{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.45);
+    z-index: 10000;
+  }
 
-    .__ms_card {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: min(620px, 92vw);
-        max-height: 80vh;
-        background: fff;
-        border-radius: 12px;
-        box-shadow: 0 20px 50px gba(0,0,0,.25);
-        z-index: 10001;
-        outline: none;
-        display: flex;
-        flex-direction: column;
-    }
+  .__ms_card{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(620px, 92vw);
+    max-height: 80vh;
+    background: #fff;              
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0,0,0,.25);  
+    z-index: 10001;
+    outline: none;
+    display: flex;
+    flex-direction: column;
+  }
 
-    .__ms_header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: .9rem 1rem;
-        border-bottom: 1px solid #eee;
-    }
+  .__ms_header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .9rem 1rem;
+    border-bottom: 1px solid #eee;
+  }
 
-    .__ms_body {
-        padding: 1rem;
-        overflow: auto;
-    }
+  .__ms_body{
+    padding: 1rem;
+    overflow: auto;
+    background: #fff;  /* optional: ensures body is white even if header/footer differ */
+  }
 
-    .__ms_close {
-        background: transparent;
-        border: none;
-        font-size: 1.5rem;
-        line-height: 1;
-        cursor: pointer;
-        padding: .25rem .5rem;
-    }
+  .__ms_close{
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: .25rem .5rem;
+  }
 </style>
 
 @if (Show)
 {
     <div class="__ms_backdrop" @onclick="HandleBackdropClick"></div>
 
-    <div class="__ms_card"
-         role="dialog"
-         aria-modal="true"
-         aria-labelledby="modal-title"
-         tabindex="0"
-         @onkeydown="HandleKeyDown">
+    <div class="__ms_card" role="dialog" aria-modal="true"
+         aria-labelledby="modal-title" tabindex="0" @onkeydown="HandleKeyDown">
         <div class="__ms_header">
             <h4 id="modal-title">@Title</h4>
             <button class="__ms_close" type="button" @onclick="Close" aria-label="Close">×</button>
         </div>
-
         <div class="__ms_body">
             @ChildContent
         </div>
     </div>
 }
+
 
 @code {
     [Parameter] public bool Show { get; set; }
